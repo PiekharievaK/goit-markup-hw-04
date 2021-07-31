@@ -110,6 +110,7 @@ header {
 .contacts-link {
   display: flex;
   align-items: center;
+  height: 16px;
   color: var(--main-text-color);
   text-decoration: none;
 }
