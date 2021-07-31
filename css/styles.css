@@ -8,6 +8,7 @@
   --dark-background-collor: #2f303a;
   --background-color: #ffffff;
   --border-color: #eeeeee;
+  --clients-icon-color: #afb1b8;
 }
 
 body {
@@ -107,8 +108,14 @@ header {
   margin-left: auto;
 }
 .contacts-link {
+  display: flex;
+  align-items: center;
   color: var(--main-text-color);
   text-decoration: none;
+}
+.contacts-list svg {
+  margin-right: 10px;
+  fill: currentColor;
 }
 .contacts-link:hover,
 .contacts-link:focus {
@@ -133,18 +140,26 @@ header {
 
 .hero-section {
   padding: 200px 0;
-
-  font-weight: 900;
-  font-size: 44px;
-  line-height: 1.36;
   text-align: center;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
+  background-image: linear-gradient(
+      to top,
+      rgba(47, 48, 58, 0.4),
+      rgba(47, 48, 58, 0.4)
+    ),
+    url("../images/hero-bg.jpg");
+  background-size: 1600px;
+  background-repeat: no-repeat;
+  background-position: center;
   background-color: var(--dark-background-collor);
 }
 
 .hero-title {
+  font-weight: 900;
+  font-size: 44px;
+  line-height: 1.36;
+  letter-spacing: 0.06em;
   margin-bottom: 30px;
+  text-transform: uppercase;
   color: var(--accent-text-color);
 }
 
@@ -157,6 +172,7 @@ header {
   font-weight: 700;
   font-size: 16px;
   line-height: 1.9;
+  letter-spacing: 0.6px;
   cursor: pointer;
   border-radius: 4px;
   border: 1px solid transparent;
@@ -209,8 +225,44 @@ header {
   font-size: 16px;
   line-height: 1.19;
 }
+.team-social-links {
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  padding: 16px 32px 0px;
+}
 
+.team-soc-link {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: var(--clients-icon-color);
+  fill: currentColor;
+  width: 44px;
+  height: 44px;
+  background-color: transparent;
+}
+
+.link-item:not(:last-child) {
+  margin-right: 10px;
+}
+.team-soc-link:hover,
+.team-soc-link:focus {
+  border-radius: 50%;
+  background-color: var(--accent-color);
+  fill: var(--accent-text-color);
+}
+.link-item {
+  display: flex;
+}
 /* Наши преимущества */
+.features-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 30px;
+  background-color: var(--accent-backgraund);
+}
 
 .features-list {
   display: flex;
@@ -255,6 +307,39 @@ header {
   height: auto;
 }
 
+/* Наши клиенты */
+
+.clients {
+  display: inline-flex;
+}
+
+.clients .item {
+  width: calc((100%-150px) / 6);
+}
+.clients .item:not(:last-child) {
+  margin-right: 30px;
+}
+.company-icon {
+  margin: 0px;
+  display: flex;
+
+  width: 170px;
+  height: 92px;
+  text-decoration: none;
+  border-radius: 4px;
+  border: 1px solid var(--clients-icon-color);
+  color: var(--clients-icon-color);
+  fill: currentColor;
+  background-color: var(--background-color);
+}
+.company-icon svg {
+  padding: 15px 32px;
+}
+.company-icon:hover,
+.company-icon:focus {
+  border: 1px solid var(--accent-color);
+  fill: var(--accent-color);
+}
 /* Кнопка фильтр */
 
 .filter {
@@ -284,6 +369,8 @@ header {
 .filter-button:hover {
   color: var(--accent-text-color);
   background-color: var(--accent-color);
+  box-shadow: 0px 3px 1px rgba(0, 0, 0, 0.1), 0px 1px 2px rgba(0, 0, 0, 0.08),
+    0px 2px 2px rgba(0, 0, 0, 0.12);
 }
 
 /* Примеры работ */
@@ -320,7 +407,7 @@ header {
   margin-right: 30px;
   margin-bottom: 30px;
 }
-.work-exemples-list .item:hover {
+.work-exemples-link:hover {
   box-shadow: 0px 1px 1px rgba(0, 0, 0, 0.12), 0px 4px 4px rgba(0, 0, 0, 0.06),
     1px 4px 6px rgba(0, 0, 0, 0.16);
 }
@@ -346,8 +433,6 @@ header {
   background-color: var(--dark-background-collor);
 }
 
-.footer {
-}
 .footer-logo {
   display: inline-block;
   margin-bottom: 20px;
@@ -387,11 +472,14 @@ address {
 }
 .join-us {
   display: inline-block;
+  height: 80px;
+  width: 206px;
 }
 .social-links {
   display: flex;
 }
 .join-us-title {
+  margin-bottom: 20px;
   font-weight: 700;
   font-size: 14px;
   line-height: 1.14;
@@ -399,11 +487,26 @@ address {
   text-transform: uppercase;
   color: var(--accent-text-color);
 }
+
 .social-links .item:not(:last-child) {
   margin-right: 10px;
 }
 .soc-link {
-  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 44px;
+  height: 44px;
+
   text-decoration: none;
+  border-radius: 50%;
   color: var(--accent-text-color);
+  background-color: rgba(255, 255, 255, 0.1);
+
+  fill: currentColor;
+}
+
+.soc-link:hover,
+.soc-link:focus {
+  background-color: var(--accent-color);
 }
